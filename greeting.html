@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First React App</title>
+  </head>
+  <body>
+     <p>Hello world!</p>
+
+     <!--declares a container for UI-->
+     <div id="app"></div>
+
+     <!--react library, renders react into a dom-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+
+     <!--react-dom library, renders react into a dom-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+
+     <!--babel-core library, enable JSX and ES6-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+     <!--enable ES6, Babel is a JavaScript compiler that allows us to use the latest generation of JavaScript. -->
+     <script type="text/babel">
+
+       class Greeting extends React.Component {
+         render() {
+           return (
+             <div>
+                <h1>Hello {this.props.name}!</h1>
+             </div>
+           );
+         }
+       }
+
+       ReactDOM.render(
+         <Greeting name="Bloc Student"/>, document.getElementById('app')
+       );
+
+     </script>
+  </body>
+</html>
+
+<!--First, we created a React component called Greeting.
+Every component has a  render() method which returns HTML to render.
+In the Greeting component, we return <h1>Hello World!</h1>,
+which is displays when we open greeting.html.-->
+
+<!--Components must return a single root element.
+This is why we add a <div> to contain all elements returned.
+However, the component doesn't display on the page until
+we successfully render it. To render a component, we call ReactDOM.render()
+with the component we want to render as the first argument.
+The second argument is the HTML element in which to render our component.
+In our case we render our  Greeting component into the <div> tag with an ID of app.-->
